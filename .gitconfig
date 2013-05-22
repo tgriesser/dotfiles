@@ -24,8 +24,6 @@
 	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 	# Interactive rebase with the given number of latest commits
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
-	# Undo a `git push`
-	undopush = push -f origin HEAD^:master
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -77,7 +75,6 @@
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
 
-
 [hub]
 	protocol = https
 [user]
@@ -85,3 +82,5 @@
     email = tgriesser10@gmail.com
 [credential]
     helper = osxkeychain
+[push]
+	default = matching
